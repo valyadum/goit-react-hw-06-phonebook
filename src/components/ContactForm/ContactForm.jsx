@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'store/contactSlice';
 
 import css from './ContactForm.module.css'
@@ -8,14 +8,16 @@ export default function ContactForm(){
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
+   const contacts = useSelector(state => state.contacts);
 
- function handleChange (event){
+  function handleChange(event) {
+
     const { name, value } = event.target;
     switch (name) {
-      case 'name':
+      case "name":
         setName(value);
         break;
-      case 'number':
+      case "number":
         setNumber(value);
         break;
       default:
@@ -24,9 +26,10 @@ export default function ContactForm(){
   }
   
 function onAddContact(event){
-    event.preventDefault();
-    dispatch(addContacts(name, number));
-    reset();
+  event.preventDefault();
+      return contacts.find((contact) => contact.name === name)
+        ? alert(`${name} is already in contact`)
+        : (dispatch(addContacts(name, number)), reset())
   };
 function reset() {
     setName('');
