@@ -1,0 +1,9 @@
+.item{
+        width: 300px;
+            background-color: rgba(116, 102, 245, 0.254);
+            padding: 20px;
+            margin: 20px;
+              display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

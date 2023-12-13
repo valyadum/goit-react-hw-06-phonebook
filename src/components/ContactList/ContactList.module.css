@@ -1,0 +1,22 @@
+.ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap:10px;
+
+}
+.li{
+  display: flex;
+    justify-content: space-between;
+
+}
+.button{
+   width: 70px;
+        padding: 0;
+        border: 1px solid rgba(113, 103, 204, 0.569);
+        background-color: rgba(134, 125, 215, 0.494);
+        border-radius: 10px;
+        cursor: pointer;
+        
+}
