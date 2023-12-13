@@ -1,7 +1,8 @@
 
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContacts } from 'store/store';
+import { deleteContacts } from 'store/contactSlice';
+
 import css from './ContactList.module.css';
 
 
